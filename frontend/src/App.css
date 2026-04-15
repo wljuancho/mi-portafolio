@@ -1,181 +1,695 @@
-/* 🔥 RESET */
+/* 🔥 RESET & FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* 🌑 BODY */
-body {
-  background: #0a0a0a;
-  color: white;
+html {
   scroll-behavior: smooth;
 }
 
-/* 🔝 NAVBAR */
+/* 🌑 BODY - Fondo profundo y tipografía limpia */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🔝 NAVBAR - Estilo cristalino (Glassmorphism) */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  border-bottom: 2px solid red;
+  padding: 0 10%;
+  height: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
 }
 
 nav h2 {
-  color: red;
-  font-size: 22px;
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
 
-/* MENU */
 nav ul {
   display: flex;
   list-style: none;
-}
-
-nav ul li {
-  margin-left: 25px;
+  gap: 32px;
 }
 
 nav ul li a {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 nav ul li a:hover {
-  color: #00aaff;
+  color: #fff;
 }
 
-/* 🧱 SECCIONES */
+/* 🧱 SECCIONES - Espaciado amplio */
 section {
   min-height: 100vh;
-  padding: 120px 60px;
+  padding: 140px 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 🧍 SOBRE MÍ */
+/* 🧍 HERO / SOBRE MÍ */
 #sobre {
-  background: linear-gradient(black, #1a1a1a);
+  position: relative;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
 }
 
 #sobre h1 {
-  color: red;
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+  font-size: clamp(40px, 8vw, 80px); /* Tamaño responsivo */
+  line-height: 0.9;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: -2px;
+}
+
+#sobre h1 span {
+  color: rgba(255, 255, 255, 0.4); /* El toque del código anterior */
 }
 
 #sobre p {
   max-width: 600px;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
 }
 
-/* ⚙️ TECNOLOGÍAS */
-#tecnologias {
-  background: #111;
-}
-
+/* ⚙️ TECNOLOGÍAS - Estilo de etiquetas sutiles */
 #tecnologias h1 {
-  color: #00aaff;
-  margin-bottom: 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  margin-bottom: 40px;
 }
 
 #tecnologias ul {
   display: flex;
   flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
 }
 
 #tecnologias li {
-  background: #1a1a1a;
-  margin: 10px;
-  padding: 10px 20px;
-  border-left: 4px solid #00aaff;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px; /* Estilo píldora */
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s;
 }
 
-/* 💻 PROYECTOS */
-#proyectos {
-  background: #1a1a1a;
+#tecnologias li:hover {
+  background: #fff;
+  color: #000;
 }
 
-#proyectos h1 {
-  color: red;
-  margin-bottom: 20px;
-}
-
-/* TARJETAS DE PROYECTOS */
+/* 💻 PROYECTOS - Tarjetas Minimalistas */
 .proyecto {
-  background: #111;
-  padding: 20px;
-  margin: 10px 0;
-  border-left: 4px solid red;
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px;
+  margin: 15px 0;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .proyecto:hover {
-  transform: scale(1.03);
-  border-left: 4px solid #00aaff;
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 📩 CONTACTO */
-#contacto {
-  background: #000;
+.proyecto h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-#contacto h1 {
-  color: #00aaff;
-  margin-bottom: 20px;
-}
-
-/* FORMULARIO */
+/* 📩 CONTACTO & FORMULARIO */
 form {
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
+  max-width: 500px;
+  gap: 15px;
 }
 
 input, textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: none;
-  outline: none;
-  background: #1a1a1a;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   color: white;
-}
-
-button {
-  padding: 10px;
-  background: red;
-  border: none;
-  color: white;
-  cursor: pointer;
+  font-family: inherit;
   transition: 0.3s;
 }
 
+input:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+button {
+  padding: 16px;
+  background: #fff;
+  border-radius: 100px;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
 button:hover {
-  background: #00aaff;
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* 📱 RESPONSIVE */
 @media (max-width: 768px) {
   nav {
-    flex-direction: column;
+    padding: 0 5%;
   }
-
+  
   nav ul {
-    margin-top: 10px;
+    display: none; /* Podrías implementar un menú hamburguesa luego */
   }
 
   section {
-    padding: 120px 20px;
+    padding: 100px 5%;
+  }
+
+  #sobre h1 {
+    font-size: 48px;
+  }
+}
+
+/* Contenedor principal de la sección */
+#sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  text-align: center; /* Centra el texto */
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+/* El badge pequeño arriba del nombre */
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+/* El nombre grande */
+#sobre h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem); /* Se ajusta según el tamaño de pantalla */
+  line-height: 0.9;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: -3px;
+}
+
+/* Parte del nombre con opacidad (los apellidos) */
+#sobre h1 span {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* La descripción centrada y con ancho controlado */
+.description {
+  max-width: 650px; /* Evita que el texto se estire demasiado */
+  margin: 0 auto 40px auto; /* Centra el bloque y da espacio abajo */
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* Botones opcionales para completar el look */
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary {
+  padding: 15px 30px;
+  background: #fff;
+  color: #000;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  padding: 15px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Contenedor General */
+#tecnologias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  padding: 100px 20px;
+}
+
+.tech-container {
+  width: 100%;
+  max-width: 800px; /* Controla que no se vea muy ancho en pantallas grandes */
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+
+/* Cuadrícula de habilidades */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dos columnas que se vuelven una en móvil */
+  gap: 30px;
+  text-align: left; /* El texto de la barra alineado a la izquierda */
+}
+
+.tech-item {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Información de texto sobre la barra */
+.tech-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tech-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-percentage {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo de la barra de progreso */
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #fff; /* O puedes usar un gradiente si prefieres */
+  border-radius: 10px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#proyectos {
+  padding: 100px 10%;
+  background: #000;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.proyectos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+/* --- EFECTO DE ESCALA --- */
+
+/* 1. Cuando pasamos el mouse sobre el CONTENEDOR, todos se opacan un poco */
+.proyectos-container:hover .proyecto-card {
+  opacity: 0.4;
+  transform: scale(0.95);
+  filter: blur(2px);
+}
+
+/* 2. El que tiene el mouse encima se RESALTA */
+.proyectos-container .proyecto-card:hover {
+  opacity: 1;
+  transform: scale(1.05); /* Crece un poco */
+  filter: blur(0);
+  z-index: 10;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- ESTILOS DE LA TARJETA --- */
+
+.proyecto-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.proyecto-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.proyecto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.proyecto-card:hover .proyecto-img {
+  transform: scale(1.1);
+}
+
+.proyecto-content {
+  padding: 25px;
+}
+
+.proyecto-techs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.proyecto-content h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.proyecto-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+#contact {
+  padding: 120px 10%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Dos columnas: Info y Formulario */
+  gap: 80px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* --- LADO IZQUIERDO: INFO --- */
+.contact-info .section-title span {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-description {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 20px 0 40px;
+  font-size: 1.1rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.method-icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.method-item span {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+}
+
+.method-item p {
+  font-weight: 500;
+  color: #fff;
+}
+
+/* --- LADO DERECHO: FORMULARIO --- */
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 5px;
+}
+
+.modern-form input, 
+.modern-form textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  border-radius: 14px;
+  color: #fff;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.modern-form input:focus, 
+.modern-form textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  background: #f0f0f0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .contact-methods {
+    align-items: center;
+  }
+}
+/* Para que los enlaces no parezcan enlaces comunes */
+.method-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Mantiene el color blanco */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.method-item:hover {
+  transform: translateX(10px); /* Efecto de desplazamiento al pasar el mouse */
+  opacity: 0.8;
+}
+
+.method-item p {
+  font-weight: 500;
+  color: #fff;
+  margin: 0; /* Asegura que no haya márgenes extraños */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  backdrop-filter: blur(15px); /* Desenfoque tipo iPhone */
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 2000;
+  padding: 0 5%;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+
+.nav-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Oculta links en móvil para un diseño más limpio */
   }
 }

@@ -1,17 +1,26 @@
-
-
 const Navbar = () => {
   return (
-    <nav>
-        <h2>Mi Portafolio</h2>
-        <ul>
+    <nav className="navbar">
+      <div className="nav-container">
+        {/* Usamos tus iniciales para un toque más profesional */}
+        <div className="nav-logo">
+          JAQR<span>.</span>
+        </div>
+        
+        <ul className="nav-links">
           <li><a href="#sobre">Sobre mí</a></li>
-          <li><a href="#tecnologias">Tecnologías</a></li>
+          <li><a href="#tecnologias">Skills</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          
+          <li><a href="#contact" className="nav-btn">Contacto</a></li>
+      
         </ul>
-      </nav>
+
+        {/* El botón de contacto resaltado para mejorar la conversión */}
+        
+      </div>
+    </nav>
   )
 }
 
-export default Navbar
+export default Navbar;

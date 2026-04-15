@@ -1,29 +1,53 @@
-
 type ProyectType = {
-    name: string;
-    tecnologias: string[];
-}
-type Props = {
-    Proyectos: ProyectType[];
+  name: string;
+  tecnologias: string[];
+  description: string;
+  image: string;
+  url: string; // Puede ser el repo de GitHub o la URL del sitio
 }
 
-const Proyecto = ({Proyectos}: Props) => {
+type Props = {
+  Proyectos: ProyectType[];
+}
+
+const Proyecto = ({ Proyectos }: Props) => {
   return (
     <section id="proyectos">
-        <h1>Proyectos</h1>
-        {Proyectos.map((proyecto, index)=>(
-            <div className="proyecto" key={index}>
-                <h3>{proyecto.name}</h3>
-                <p>Echo con:</p>
+      <div className="section-header">
+        <span className="section-subtitle">Portfolio</span>
+        <h2 className="section-title">Proyectos Destacados</h2>
+      </div>
 
-                <ul>
-                    {proyecto.tecnologias.map((techt, i)=>
-                    <li key = {i}>{techt}</li>)}
-                </ul>
+      <div className="proyectos-container">
+        {Proyectos.map((proyecto, index) => (
+          <a 
+            href={proyecto.url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="proyecto-card" 
+            key={index}
+          >
+            <div className="proyecto-image-wrapper">
+              <img src={proyecto.image} alt={proyecto.name} className="proyecto-img" />
+              <div className="proyecto-overlay">
+                <span>Ver Proyecto</span>
+              </div>
             </div>
+
+            <div className="proyecto-content">
+              <div className="proyecto-techs">
+                {proyecto.tecnologias.map((tech, i) => (
+                  <span key={i} className="tech-tag">{tech}</span>
+                ))}
+              </div>
+              <h3>{proyecto.name}</h3>
+              <p>{proyecto.description}</p>
+            </div>
+          </a>
         ))}
-      </section>
+      </div>
+    </section>
   )
 }
 
-export default Proyecto
+export default Proyecto;
