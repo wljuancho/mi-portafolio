@@ -1,4 +1,4 @@
-import { Mail, Phone,  Send } from 'lucide-react';
+import { Mail, Phone, } from 'lucide-react';
 
 type Props = {
   Telefono: number;
