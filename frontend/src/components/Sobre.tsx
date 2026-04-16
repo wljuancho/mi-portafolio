@@ -25,7 +25,7 @@ const Sobre = ({nombre, descripcion}: Props) => {
 
         <div className="hero-actions">
           <a href="#proyectos" className="btn-primary">Ver Proyectos</a>
-          <a href="#contacto" className="btn-secondary">Contacto</a>
+          <a href="#contact" className="btn-secondary">Contacto</a>
         </div>
       </div>
     </section>
