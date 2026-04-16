@@ -35,6 +35,7 @@ function App() {
       <Proyecto Proyectos={misProyectos} />
       <Contacto Telefono = {573012758519} Email="juanangelquinteroroldan82@gmail.com"
       Github="wljuancho"/>
+
       
     </div>
   );
